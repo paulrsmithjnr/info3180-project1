@@ -84,9 +84,7 @@ def loadprofile(userid):
 # The functions below should be applicable to all Flask apps.
 ###
 
-@login_manager.user_loader
-def load_user(id):
-    return Profile.query.get(int(id))
+
 
 @app.route('/<file_name>.txt')
 def send_text_file(file_name):
