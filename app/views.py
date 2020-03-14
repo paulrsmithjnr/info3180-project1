@@ -19,7 +19,7 @@ from werkzeug.security import check_password_hash
 ###
 
 def connect_db():
- return psycopg2.connect(host="localhost", database="project1", user="project1", password="project1")
+ return psycopg2.connect(host="ec2-23-22-156-110.compute-1.amazonaws.com", database="datdia6j8gufho", user="jrwagwsvveqdyq", password="d3b01edc599b779de8e660424263867202089a8783719506324e993913c68e69")
 
 @app.route('/')
 def home():
