@@ -1,4 +1,5 @@
 from . import db
+from datetime import datetime
 # from werkzeug.security import generate_password_hash
 
 
@@ -17,6 +18,8 @@ class Profile(db.Model):
     location = db.Column(db.String(80))
     biography = db.Column(db.String(255))
     profile_picture = db.Column(db.String(80))
+    date_joined = db.Column(db.String(80))
+
 
     def __init__(self, first_name, last_name, gender, email, location, biography, profile_picture):
         self.first_name = first_name
@@ -26,6 +29,7 @@ class Profile(db.Model):
         self.location = location
         self.biography = biography
         self.profile_picture = profile_picture
+        self.date_joined = datetime.now().strftime("%B %d, %Y")
         
 
     def is_authenticated(self):
