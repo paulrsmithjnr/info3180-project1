@@ -69,7 +69,7 @@ def profiles():
     """Render the website's profiles page."""
     db = connect_db()
     cur = db.cursor()
-    cur.execute('SELECT * FROM profiles')
+    cur.execute('SELECT * FROM userProfiles')
     profiles = cur.fetchall()
     return render_template('profiles.html', profiles=profiles)
 
